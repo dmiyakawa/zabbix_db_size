@@ -10,22 +10,24 @@
   <div id="login">
     <form>
       <ul>
-        <li>URL
-          <input type="hidden" name="url"
-                 id="url-input"
-                 value="http://localhost/zabbix/api_jsonrpc.php"/>
-          <input type="button"
-                 value="Check API Version"
-                 onclick="checkVersion(this.form)"></input>
-        </li>
+        <input type="hidden" name="url"
+               id="url-input"
+               value="http://localhost/zabbix/api_jsonrpc.php"/>
         <li>Username <input type="text" name="username"
                             value="Admin"/></li>
         <li>Password <input type="password" name="password"
                             value="zabbix"/></li>
       </ul>
-      <p><input type="button"
-                value="Execute"
-                onclick="doExecute(this.form)"/></p>
+      <!-- <p>
+        <input type="button"
+               value="Check API Version"
+               onclick="checkVersion(this.form)"></input>
+      </p> -->
+      <p>
+        <input type="button"
+               value="Estimate DB Size"
+               onclick="doExecute(this.form)"/>
+      </p>
     </form>
   </div>
 
