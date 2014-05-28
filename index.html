@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>jQuery plugin for Zabbix API demo</title>
+  <link rel="stylesheet" type="text/css" href="main.css" media="screen" />
+<body>
+
+  <div id="header"><h1>Zabbix Datasize Estimator</h1></div>
+  <div id="login">
+    <form>
+      <ul>
+        <li>URL
+          <input type="hidden" name="url"
+                 id="url-input"
+                 value="http://localhost/zabbix/api_jsonrpc.php"/>
+          <input type="button"
+                 value="Check API Version"
+                 onclick="checkVersion(this.form)"></input>
+        </li>
+        <li>Username <input type="text" name="username"
+                            value="Admin"/></li>
+        <li>Password <input type="password" name="password"
+                            value="zabbix"/></li>
+      </ul>
+      <p><input type="button"
+                value="Execute"
+                onclick="doExecute(this.form)"/></p>
+    </form>
+  </div>
+
+<div id="request" style="display:none;">
+  <form>
+    <ul>
+      <li>Method: <select class="method1" name="method1" onChange="changeMethod2(this.value)"></select> . <select class="method2" name="method2" onChange="changeParameters(this.form.method1.value, this.form.method2.value)"></select></li>
+      <li><a href="javascript:toggleParameters()">Parameters</a></li>
+      <p class="parameters"></p>
+      <li><input type="button" value="Send Request" onClick="doRequest(this.form)"/></li>
+    </ul>
+  </form>
+</div>
+
+<div id="result"></div>
+
+<div id="footer">
+  <p>Based on <a href="https://www.zabbix.com/documentation/2.2/manual/installation/requirements#database_size">Zabbix 2.2 Documentation</a></p>
+  <p>Using <a href="https://github.com/kodai/jqzabbix">jqzabbix</p>
+</div>
+
+<!-- <script type="text/javascript" charset="utf-8" src="js/jquery-2.1.1.min.js"></script> -->
+<script type="text/javascript" charset="utf-8" src="js/jquery-2.1.1.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/jqzabbix.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/main.js"></script>
+
+</body>
+</html>
